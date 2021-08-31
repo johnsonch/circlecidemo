@@ -1,6 +1,8 @@
 version: 2.1
 jobs:
   script:
+    docker:
+      - image: docker.io/healthfinch/circleci-aws:1.0
     steps:
       - checkout
       - run:
