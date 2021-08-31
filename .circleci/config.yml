@@ -1,15 +1,14 @@
 version: 2.1
-orbs:
-  aws-cli: circleci/aws-cli@2.0
 jobs:
   script:
-    executor: aws-cli/default
+    docker:
+      - image: circleci/ruby:2.7
     steps:
       - checkout
       - run:
           name: "run deploy script"
           command: |
-            ./deploy/deploy.rb
+            ./deploy/deploy.py
           no_output_timeout: 15m
 workflows:
   # Name the workflow "welcome"
