@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   script:
     docker:
-      - image: circleci/ruby:2.7
+      - image: docker.io/healthfinch/circleci-aws:1.0
     steps:
       - checkout
       - run:
